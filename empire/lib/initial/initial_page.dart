@@ -7,9 +7,9 @@ class InitialPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:Scaffold(
+      home: Scaffold(
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -66,75 +66,79 @@ class InitialPage extends StatelessWidget {
               ),
               SizedBox(
                 height: 400,
-                child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-                Column(
-                  children: [
-                    ButtonIcon(
-                      onPressed: () {},
-                      colorBackground: Color(0xFFE6E6E6),
-                      colorText: Color(0xFF000000),
-                      img: 'lib/images/g.png',
-                      text: 'Entrar com Google',
-                      heightIcon: 24,
-                      widhtIcon: 24,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    ButtonIcon(
-                      onPressed: () {},
-                      colorBackground: Color(0xFF000000),
-                      colorText: Color(0xFFFFFFFF),
-                      img: 'lib/images/apple.png',
-                      text: 'Entrar com Apple',
-                      heightIcon: 24,
-                      widhtIcon: 20.22,
-                    ),
-                  ],
-                ),
-                Row(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                      color: const Color.fromARGB(255, 138, 138, 138),
-                      height: 0.3,
-                      width: 120,
+                    Column(
+                      children: [
+                        ButtonIcon(
+                          onPressed: () {},
+                          colorBackground: Color(0xFFE6E6E6),
+                          colorText: Color(0xFF000000),
+                          img: 'lib/images/g.png',
+                          text: 'Entrar com Google',
+                          heightIcon: 24,
+                          widhtIcon: 24,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        ButtonIcon(
+                          onPressed: () {},
+                          colorBackground: Color(0xFF000000),
+                          colorText: Color(0xFFFFFFFF),
+                          img: 'lib/images/apple.png',
+                          text: 'Entrar com Apple',
+                          heightIcon: 24,
+                          widhtIcon: 20.22,
+                        ),
+                      ],
                     ),
-                    const Text(
-                      'ou entre com',
-                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          color: const Color.fromARGB(255, 138, 138, 138),
+                          height: 0.3,
+                          width: 100,
+                        ),
+                        const Text(
+                          'ou entre com',
+                          style: TextStyle(
+                              fontSize: 12, fontWeight: FontWeight.bold),
+                        ),
+                        Container(
+                          color: const Color.fromARGB(255, 138, 138, 138),
+                          height: 0.3,
+                          width: 120,
+                        ),
+                      ],
                     ),
-                    Container(
-                      color: const Color.fromARGB(255, 138, 138, 138),
-                      height: 0.3,
-                      width: 120,
+                    SizedBox(
+                      width: 325,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Button(
+                            onPressed: () {},
+                            colorBackground: Colors.white,
+                            colorText: Color(0xFF505854),
+                            text: 'Email',
+                            border: true,
+                            borderColor: const Color(0xFF505854),
+                          ),
+                          Button(
+                            onPressed: () {},
+                            colorBackground: Color(0xFFF5D70A),
+                            colorText: Color(0xFF282C2A),
+                            text: 'Telefone',
+                            border: false,
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
-                SizedBox(
-                  width: 325,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Button(
-                        onPressed: () {},
-                        colorBackground: Colors.white,
-                        colorText: Color(0xFF505854),
-                        text: 'Email',
-                        border: true,
-                        borderColor: const Color(0xFF505854),
-                      ),
-                      Button(
-                        onPressed: () {},
-                        colorBackground: Color(0xFFF5D70A),
-                        colorText: Color(0xFF282C2A),
-                        text: 'Telefone',
-                        border: false,
-                      ),
-                    ],
-                  ),
-                )
-                ],),
               ),
             ],
           ),
