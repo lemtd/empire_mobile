@@ -1,7 +1,6 @@
 import 'package:empire/components/button.dart';
 import 'package:empire/components/forms_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 
 class Field extends StatefulWidget {
   final TextEditingController object;
@@ -43,7 +42,7 @@ class _LoginPageState extends State<Field> {
             ),
             Form(
               key: _formKey,
-              child: Observer(builder: (_) => FormsWidget(object: widget.object, keyboard: widget.keybord)),
+              child: FormsWidget(object: widget.object, keyboard: widget.keybord),
             ),
             Button(
                 onPressed: widget.onPressed,
