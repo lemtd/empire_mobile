@@ -95,12 +95,12 @@ class InitialPage extends StatelessWidget {
                       ],
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Container(
                           color: const Color.fromARGB(255, 138, 138, 138),
                           height: 0.3,
-                          width: 100,
+                          width: 90,
                         ),
                         const Text(
                           'ou entre com',
@@ -110,7 +110,7 @@ class InitialPage extends StatelessWidget {
                         Container(
                           color: const Color.fromARGB(255, 138, 138, 138),
                           height: 0.3,
-                          width: 120,
+                          width: 90,
                         ),
                       ],
                     ),
