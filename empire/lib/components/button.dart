@@ -7,6 +7,8 @@ class Button extends StatelessWidget {
   final String text;
   final bool border;
   final Color? borderColor;
+  final double widthButton;
+  final double heightButton;
 
   const Button(
       {super.key,
@@ -15,13 +17,13 @@ class Button extends StatelessWidget {
       required this.colorText,
       required this.text,
       required this.border,
-      this.borderColor});
+      this.borderColor, required this.widthButton, required this.heightButton});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-                  width: 147,
-                  height: 56,
+                  width: widthButton,
+                  height: heightButton,
                   child: ElevatedButton(
                     onPressed: onPressed,
                     style: border ? ElevatedButton.styleFrom(

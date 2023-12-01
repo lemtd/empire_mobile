@@ -73,20 +73,20 @@ class InitialPage extends StatelessWidget {
                       children: [
                         ButtonIcon(
                           onPressed: () {},
-                          colorBackground: Color(0xFFE6E6E6),
-                          colorText: Color(0xFF000000),
+                          colorBackground: const Color(0xFFE6E6E6),
+                          colorText: const Color(0xFF000000),
                           img: 'lib/images/g.png',
                           text: 'Entrar com Google',
                           heightIcon: 24,
                           widhtIcon: 24,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         ButtonIcon(
                           onPressed: () {},
-                          colorBackground: Color(0xFF000000),
-                          colorText: Color(0xFFFFFFFF),
+                          colorBackground: const Color(0xFF000000),
+                          colorText: const Color(0xFFFFFFFF),
                           img: 'lib/images/apple.png',
                           text: 'Entrar com Apple',
                           heightIcon: 24,
@@ -95,12 +95,12 @@ class InitialPage extends StatelessWidget {
                       ],
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Container(
                           color: const Color.fromARGB(255, 138, 138, 138),
                           height: 0.3,
-                          width: 100,
+                          width: 90,
                         ),
                         const Text(
                           'ou entre com',
@@ -110,7 +110,7 @@ class InitialPage extends StatelessWidget {
                         Container(
                           color: const Color.fromARGB(255, 138, 138, 138),
                           height: 0.3,
-                          width: 120,
+                          width: 90,
                         ),
                       ],
                     ),
@@ -120,19 +120,25 @@ class InitialPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Button(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/login_email');
+                            },
                             colorBackground: Colors.white,
-                            colorText: Color(0xFF505854),
+                            colorText: const Color(0xFF505854),
                             text: 'Email',
                             border: true,
                             borderColor: const Color(0xFF505854),
+                            widthButton: 147,
+                            heightButton: 56,
                           ),
                           Button(
                             onPressed: () {},
-                            colorBackground: Color(0xFFF5D70A),
-                            colorText: Color(0xFF282C2A),
+                            colorBackground: const Color(0xFFF5D70A),
+                            colorText: const Color(0xFF282C2A),
                             text: 'Telefone',
                             border: false,
+                            widthButton: 147,
+                            heightButton: 56,
                           ),
                         ],
                       ),
