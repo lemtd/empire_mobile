@@ -7,13 +7,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<DrawerControllerState> drawerKey =
-      GlobalKey<DrawerControllerState>();
+    final GlobalKey<ScaffoldState> drawerKey = GlobalKey();
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Color.fromARGB(51, 0, 0, 0),
+        primaryColor: const Color.fromARGB(51, 0, 0, 0),
         indicatorColor: const Color.fromARGB(255, 255, 255, 255),
         brightness: Brightness.light,
         tabBarTheme: const TabBarTheme(
@@ -25,11 +24,12 @@ class HomePage extends StatelessWidget {
       home: DefaultTabController(
         length: 4,
         child: Scaffold(
+            key: drawerKey,
             appBar: AppBar(
               shape: const Border(
                   bottom: BorderSide(color: Color.fromARGB(21, 245, 214, 10))),
               automaticallyImplyLeading: false,
-              backgroundColor: Color.fromARGB(51, 245, 214, 10),
+              backgroundColor: const Color.fromARGB(51, 245, 214, 10),
               flexibleSpace: null,
               title: const Align(
                 alignment: Alignment.center,
@@ -87,69 +87,142 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            // bottomNavigationBar: BottomNavigationBar(
-            //   items: [
-            //     BottomNavigationBarItem(
-            //       icon: Icon(Icons.home),
-            //       label: 'Início',
-            //     ),
-            //     BottomNavigationBarItem(
-            //       icon: Icon(Icons.search),
-            //       label: 'Pesquisar',
-            //     ),
-            //     BottomNavigationBarItem(
-            //       icon: Icon(Icons.person),
-            //       label: 'Perfil',
-            //     ),
-            //   ],
-            //   currentIndex: 0, // Índice do item selecionado
-            //   selectedItemColor: Colors.blue, // Cor do item selecionado
-            //   onTap: (index) {
-            //     // Tratar a seleção de item aqui
-            //     print('Item selecionado: $index');
-            //   },
-            // ),
-            // floatingActionButton: FloatingActionButton(
-            //   onPressed: () {
-            //     // Ação quando o botão de Drawer é pressionado
-            //     print('Abrir Drawer');
-            //   },
-            //   child: Icon(Icons.menu),
-            // ),
-            // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
             drawer: Drawer(
+              backgroundColor: Colors.white,
               child: ListView(
                 padding: EdgeInsets.zero,
-                children: <Widget>[
-                  UserAccountsDrawerHeader(
-                    accountEmail: Text("user@mail.com"),
-                    accountName: Text("Seu zé"),
-                    currentAccountPicture: CircleAvatar(
-                      child: Text("SZ"),
+                children: [
+                  DrawerHeader(
+                    decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: Row(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              shape: const CircleBorder(),
+                              backgroundColor: Colors.white,
+                              padding: const EdgeInsets.all(16.0),
+                            ),
+                            child: const Icon(
+                              Icons.search,
+                              color: Colors.black,
+                            ),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Ação ao pressionar o botão de ajuda
+                            },
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              padding: const EdgeInsets.all(16.0),
+                            ),
+                            child: const Row(
+                              children: [
+                                Icon(
+                                  Icons.help_outline_outlined,
+                                  color: Colors.black,
+                                ),
+                                SizedBox(width: 8.0),
+                                Text(
+                                  'Ajuda e Suporte',
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text("Minha conta"),
+                    leading: const Icon(
+                      Icons.home_outlined,
+                      size: 20,
+                    ),
+                    title: const Text("Início"),
                     onTap: () {
-                      Navigator.pop(context);
-                      //Navegar para outra página
+                      // Navigator.pop(context);
                     },
                   ),
                   ListTile(
-                    leading: Icon(Icons.shopping_basket),
-                    title: Text("Meus pedidos"),
+                    leading: const Image(
+                        height: 20,
+                        width: 20,
+                        image: AssetImage('lib/images/whistle.png'),
+                        fit: BoxFit.cover),
+                    title: const Text("Esportes"),
                     onTap: () {
-                      Navigator.pop(context);
-                      //Navegar para outra página
+                      // Navigator.pop(context);
                     },
                   ),
                   ListTile(
-                    leading: Icon(Icons.favorite),
-                    title: Text("Favoritos"),
+                    leading: const Icon(
+                      Icons.bookmark_border_rounded,
+                      size: 17,
+                    ),
+                    title: const Text("Notícias e Dicas"),
                     onTap: () {
-                      Navigator.pop(context);
-                      //Navegar para outra página
+                      // Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: const Image(
+                        height: 17,
+                        width: 17,
+                        image: AssetImage('lib/images/star.png'),
+                        fit: BoxFit.cover),
+                    title: const Text("Favoritos"),
+                    onTap: () {
+                      // Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: const Image(
+                        height: 15,
+                        width: 17,
+                        image: AssetImage('lib/images/user.png'),
+                        fit: BoxFit.cover),
+                    title: const Text("Influenciadores"),
+                    onTap: () {
+                      // Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: const Icon(
+                      Icons.access_time_rounded,
+                      size: 17,
+                    ),
+                    title: const Text("Comparador de odds"),
+                    onTap: () {
+                      // Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: const Image(
+                        height: 13,
+                        width: 16,
+                        image: AssetImage('lib/images/ticket.png'),
+                        fit: BoxFit.cover),
+                    title: const Text("Jogo consciente"),
+                    onTap: () {
+                      // Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: const Image(
+                        height: 17,
+                        width: 15,
+                        image: AssetImage('lib/images/security.png'),
+                        fit: BoxFit.cover),
+                    title: const Text("Privacidade e segurança"),
+                    onTap: () {
+                      // Navigator.pop(context);
                     },
                   ),
                 ],
@@ -164,17 +237,16 @@ class HomePage extends StatelessWidget {
                     left: 50,
                     child: ElevatedButton(
                       onPressed: () {
-                        drawerKey.currentState?.open();
+                        drawerKey.currentState!.openDrawer();
                       },
                       style: ElevatedButton.styleFrom(
-                        shape: CircleBorder(),
-                        padding: EdgeInsets.all(20.0),
-                        primary: const Color.fromARGB(
-                            255, 0, 0, 0), // Cor de fundo do botão
+                        shape: const CircleBorder(),
+                        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+                        padding: const EdgeInsets.all(20.0),
                       ),
-                      child: Container(
-                        width: 15.0, // Largura do botão
-                        height: 15.0, // Altura do botão
+                      child: const SizedBox(
+                        width: 15.0,
+                        height: 15.0,
                         child: Center(
                           child: Icon(
                             Icons.menu,
@@ -188,7 +260,7 @@ class HomePage extends StatelessWidget {
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: Container(
-                      margin: EdgeInsets.only(left: 25, right: 25),
+                      margin: const EdgeInsets.only(left: 25, right: 25),
                       decoration: BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(25.0),
@@ -196,25 +268,41 @@ class HomePage extends StatelessWidget {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          IconButton(
-                            icon: Icon(Icons.menu),
-                            onPressed: () {
-                              print('Opção 1 do Menu pressionada');
-                            },
+                          ClipOval(
+                            child: IconButton(
+                              icon: const Icon(
+                                Icons.home,
+                                color: Color.fromARGB(255, 255, 255, 255),
+                                size: 20,
+                              ),
+                              onPressed: () {
+                                print('Click 1');
+                              },
+                            ),
                           ),
-                          IconButton(
-                            icon: Icon(Icons.menu),
-                            onPressed: () {
-                              // Ação quando uma opção do menu é pressionada
-                              print('Opção 2 do Menu pressionada');
-                            },
+                          ClipOval(
+                            child: IconButton(
+                              icon: const Icon(
+                                Icons.menu,
+                                color: Colors.white,
+                                size: 20,
+                              ),
+                              onPressed: () {
+                                print('Click 2');
+                              },
+                            ),
                           ),
-                          IconButton(
-                            icon: Icon(Icons.menu),
-                            onPressed: () {
-                              // Ação quando uma opção do menu é pressionada
-                              print('Opção 3 do Menu pressionada');
-                            },
+                          ClipOval(
+                            child: IconButton(
+                              icon: const Icon(
+                                Icons.bookmark_border_rounded,
+                                color: Colors.white,
+                                size: 20,
+                              ),
+                              onPressed: () {
+                                print('Click 3');
+                              },
+                            ),
                           ),
                         ],
                       ),
@@ -223,15 +311,17 @@ class HomePage extends StatelessWidget {
                   Positioned(
                     bottom: 1,
                     right: 50,
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.circle,
-                        color: Colors.blue,
+                    child: ClipOval(
+                      child: InkWell(
+                        onTap: () {
+                          print('Click avatar');
+                        },
+                        child: const Image(
+                            height: 40,
+                            width: 40,
+                            image: AssetImage('lib/images/avatar.png'),
+                            fit: BoxFit.cover),
                       ),
-                      onPressed: () {
-                        // Ação quando o botão de perfil é pressionado
-                        print('Botão de Perfil pressionado');
-                      },
                     ),
                   ),
                 ],
