@@ -228,89 +228,107 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            floatingActionButton: Align(
-              alignment: Alignment.bottomCenter,
-              child: Stack(
-                children: [
-                  Positioned(
-                    bottom: 0,
-                    left: 50,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        drawerKey.currentState!.openDrawer();
-                      },
-                      style: ElevatedButton.styleFrom(
-                        shape: const CircleBorder(),
-                        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-                        padding: const EdgeInsets.all(20.0),
-                      ),
-                      child: const SizedBox(
-                        width: 15.0,
-                        height: 15.0,
-                        child: Center(
-                          child: Icon(
-                            Icons.menu,
-                            color: Colors.white,
-                            size: 15,
-                          ),
+            floatingActionButton: Stack(
+              children: [
+                Positioned(
+                  bottom: 0,
+                  left: 50,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      drawerKey.currentState!.openDrawer();
+                    },
+                    style: ElevatedButton.styleFrom(
+                      elevation: 10,
+                      shape: const CircleBorder(),
+                      backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+                      padding: const EdgeInsets.all(20.0),
+                    ),
+                    child: const SizedBox(
+                      width: 15.0,
+                      height: 15.0,
+                      child: Center(
+                        child: Icon(
+                          Icons.menu,
+                          color: Colors.white,
+                          size: 15,
                         ),
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Container(
-                      margin: const EdgeInsets.only(left: 25, right: 25),
-                      decoration: BoxDecoration(
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    decoration: BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(25.0),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          ClipOval(
-                            child: IconButton(
-                              icon: const Icon(
-                                Icons.home,
-                                color: Color.fromARGB(255, 255, 255, 255),
-                                size: 20,
-                              ),
-                              onPressed: () {
-                                print('Click 1');
-                              },
-                            ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color.fromARGB(20, 0, 0, 0)
+                                .withOpacity(0.15),
+                            spreadRadius: 0.1,
+                            blurRadius: 15,
+                            offset: const Offset(0, 0),
                           ),
-                          ClipOval(
-                            child: IconButton(
-                              icon: const Icon(
-                                Icons.menu,
-                                color: Colors.white,
-                                size: 20,
-                              ),
-                              onPressed: () {
-                                print('Click 2');
-                              },
+                        ]),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ClipOval(
+                          child: IconButton(
+                            icon: const Icon(
+                              Icons.home,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                              size: 20,
                             ),
+                            onPressed: () {
+                              print('Click 1');
+                            },
                           ),
-                          ClipOval(
-                            child: IconButton(
-                              icon: const Icon(
-                                Icons.bookmark_border_rounded,
-                                color: Colors.white,
-                                size: 20,
-                              ),
-                              onPressed: () {
-                                print('Click 3');
-                              },
+                        ),
+                        ClipOval(
+                          child: IconButton(
+                            icon: const Icon(
+                              Icons.menu,
+                              color: Colors.white,
+                              size: 20,
                             ),
+                            onPressed: () {
+                              print('Click 2');
+                            },
                           ),
-                        ],
-                      ),
+                        ),
+                        ClipOval(
+                          child: IconButton(
+                            icon: const Icon(
+                              Icons.bookmark_border_rounded,
+                              color: Colors.white,
+                              size: 20,
+                            ),
+                            onPressed: () {
+                              print('Click 3');
+                            },
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  Positioned(
-                    bottom: 1,
-                    right: 50,
+                ),
+                Positioned(
+                  bottom: 0,
+                  right: 40,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.2),
+                          spreadRadius: 2,
+                          blurRadius: 4,
+                          offset: const Offset(0, 3),
+                        ),
+                      ],
+                    ),
                     child: ClipOval(
                       child: InkWell(
                         onTap: () {
@@ -319,13 +337,13 @@ class HomePage extends StatelessWidget {
                         child: const Image(
                             height: 40,
                             width: 40,
-                            image: AssetImage('lib/images/avatar.png'),
+                            image: AssetImage('lib/images/avatar1.png'),
                             fit: BoxFit.cover),
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             )),
       ),
     );
