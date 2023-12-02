@@ -159,6 +159,7 @@ class HomePage extends StatelessWidget {
                     title: const Text("Esportes"),
                     onTap: () {
                       // Navigator.pop(context);
+                      Navigator.pushNamed(context, '/sports');
                     },
                   ),
                   ListTile(
