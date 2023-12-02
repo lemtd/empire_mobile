@@ -15,9 +15,9 @@ class CardTip extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: const Color.fromARGB(255, 10, 10, 10).withOpacity(0.15),
-            spreadRadius: 5,
-            blurRadius: 7,
-            offset: const Offset(0, 3),
+            spreadRadius: 1,
+            blurRadius: 10,
+            offset: const Offset(0, 0),
           ),
         ],
       ),
