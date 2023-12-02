@@ -87,6 +87,9 @@ flutter:
     - lib/images/image4.png
     - lib/images/image5.png
     - lib/images/image6.png
+    - lib/images/image7.png
+    - lib/images/image8.png
+    - lib/images/image9.png
     - lib/images/empire.png
     - lib/images/poker.png
     - lib/images/soccer.png
