@@ -9,6 +9,9 @@ class ButtonIcon extends StatelessWidget {
   final String text;
   final double heightIcon;
   final double widhtIcon;
+  final double heightButton;
+  final double widhtButton;
+  final double textSize;
 
   const ButtonIcon({
     super.key,
@@ -19,7 +22,7 @@ class ButtonIcon extends StatelessWidget {
     required this.img,
     required this.text,
     required this.heightIcon,
-    required this.widhtIcon,
+    required this.widhtIcon, required this.heightButton, required this.widhtButton, required this.textSize,
   });
 
   @override
@@ -28,8 +31,8 @@ class ButtonIcon extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(backgroundColor: colorBackground),
       child: SizedBox(
-        width: 298,
-        height: 56,
+        width: widhtButton,
+        height: heightButton,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -41,7 +44,7 @@ class ButtonIcon extends StatelessWidget {
             Text(text,
                 style: TextStyle(
                     color: colorText,
-                    fontSize: 13,
+                    fontSize: textSize,
                     fontWeight: FontWeight.bold))
           ],
         ),

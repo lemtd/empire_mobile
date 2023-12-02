@@ -43,6 +43,7 @@ class LoginPassword extends StatelessWidget {
                 title: 'Qual sua senha?',
                 onPressed: () async {
                   await authService.login(authenticationController.email.text, authenticationController.password.text);
+                  Navigator.pushNamed(context, '/home');
                 },
               ),
             ],

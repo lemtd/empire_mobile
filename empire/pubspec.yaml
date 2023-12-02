@@ -42,6 +42,8 @@ dependencies:
   injectable_generator: ^2.4.1
   mobx_codegen: ^2.4.0
   flutter_mobx: ^2.2.0
+  carousel_slider: ^4.2.1
+  percent_indicator: ^4.2.3
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +74,49 @@ flutter:
     - lib/images/g.png
     - lib/images/apple.png
     - lib/images/arrow_left.png
+    - lib/images/arrow_right.png
+    - lib/images/basket.png
+    - lib/images/boxing.png
+    - lib/images/biceps.png
+    - lib/images/football.png
+    - lib/images/controller.png
+    - lib/images/champions.png
+    - lib/images/image1.png
+    - lib/images/image2.png
+    - lib/images/image3.png
+    - lib/images/image4.png
+    - lib/images/image5.png
+    - lib/images/image6.png
+    - lib/images/image7.png
+    - lib/images/image8.png
+    - lib/images/image9.png
+    - lib/images/empire.png
+    - lib/images/poker.png
+    - lib/images/soccer.png
+    - lib/images/tenis.png
+    - lib/images/volley.png
+    - lib/images/whistle.png
+    - lib/images/nba.png
+    - lib/images/league.png
+    - lib/images/redbull.png
+    - lib/images/europe.png
+    - lib/images/bet.png
+    - lib/images/betsson.png
+    - lib/images/betsafe.png
+    - lib/images/frame1.png
+    - lib/images/frame2.png
+    - lib/images/frame3.png
+    - lib/images/palmeiras.png
+    - lib/images/sp.png
+    - lib/images/bet365.png
+    - lib/images/stake.png
+    - lib/images/star.png
+    - lib/images/security.png
+    - lib/images/ticket.png
+    - lib/images/user.png
+    - lib/images/avatar1.png
+    - lib/images/avatar2.png
+    - lib/images/noto_fire.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
