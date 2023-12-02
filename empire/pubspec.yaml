@@ -110,6 +110,11 @@ flutter:
     - lib/images/sp.png
     - lib/images/bet365.png
     - lib/images/stake.png
+    - lib/images/star.png
+    - lib/images/security.png
+    - lib/images/ticket.png
+    - lib/images/user.png
+    - lib/images/avatar.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
