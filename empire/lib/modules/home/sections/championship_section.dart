@@ -8,18 +8,18 @@ class ChampionshipSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(25),
+      margin: const EdgeInsets.all(15),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: const Text(
+          const Padding(
+            padding: EdgeInsets.only(left: 20),
+            child: Text(
               'Campeonatos populares',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           CarouselSlider(
               items: const [
                 CardChampionship(img: 'lib/images/champions.png'),

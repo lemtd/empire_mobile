@@ -8,7 +8,7 @@ class CardMatch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(25),
+      margin: const EdgeInsets.only(top: 15, bottom: 15, left: 25, right: 25),
       height: 400,
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 255, 255, 255),
