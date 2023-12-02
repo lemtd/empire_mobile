@@ -108,6 +108,8 @@ flutter:
     - lib/images/frame3.png
     - lib/images/palmeiras.png
     - lib/images/sp.png
+    - lib/images/bet365.png
+    - lib/images/stake.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
