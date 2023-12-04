@@ -11,7 +11,7 @@ class LoginEmail extends StatefulWidget {
 }
 
 class _LoginEmailState extends State<LoginEmail> {
-  final _authenticationController = getIt<AuthenticationController>();
+  final authenticationController = getIt<AuthenticationController>();
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +44,8 @@ class _LoginEmailState extends State<LoginEmail> {
                   )
                   ),
               Field(
-                object: _authenticationController.email,
-                keybord: _authenticationController.keyboardEmail,
+                object: authenticationController.email,
+                keybord: authenticationController.keyboardEmail,
                 title: 'Qual o seu e-mail?',
                 onPressed: () {
                   Navigator.pushNamed(context, '/login_password');

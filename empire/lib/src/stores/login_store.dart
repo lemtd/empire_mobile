@@ -16,6 +16,7 @@ class LoginStore {
 
     try {
       final response = await _repository.loginUser(authenticationController.email.text, authenticationController.password.text);
+      await _saveUserData(authenticationController.email.text, authenticationController.password.text);
       await _saveTokens(response.authToken, response.refreshToken);
       return true;
     } catch (e) {
@@ -33,6 +34,13 @@ class LoginStore {
     await prefs.setString('refresh_token', refreshToken);
   }
 
+  Future<void> _saveUserData(String email, String password) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    await prefs.setString('user_email', email);
+    await prefs.setString('user_password', password);
+  }
+
   Future<String> getAuthToken() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getString('auth_token') ?? '';
@@ -41,5 +49,15 @@ class LoginStore {
   Future<String> getRefreshToken() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getString('refresh_token') ?? '';
+  }
+
+  Future<String> getUserEmail() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getString('user_email') ?? '';
+  }
+
+  Future<String> getUserPassword() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getString('user_password') ?? '';
   }
 }
