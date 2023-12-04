@@ -11,14 +11,24 @@ class MatchSection extends StatelessWidget {
       child: Column(
         children: [
           //widget tabbar
-          const CardMatch(),
-          const CardMatch(),
+          const CardMatch(
+            isMatchPage: false,
+          ),
+          const CardMatch(
+            isMatchPage: false,
+          ),
           SizedBox(
             width: 280,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('Acompanhe todas as partidas', style: TextStyle(color: Color(0xFF505854), fontSize: 14, fontWeight: FontWeight.bold),),
+                const Text(
+                  'Acompanhe todas as partidas',
+                  style: TextStyle(
+                      color: Color(0xFF505854),
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold),
+                ),
                 SizedBox(
                   height: 50,
                   child: ElevatedButton(
