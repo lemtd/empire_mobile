@@ -1,6 +1,6 @@
 import 'package:empire/components/field.dart';
+import 'package:empire/components/loading_modal.dart';
 import 'package:empire/locator.dart';
-import 'package:empire/modules/authentiction/auth_service.dart';
 import 'package:empire/modules/authentiction/authentication_controller.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +10,6 @@ class LoginPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final authenticationController = getIt<AuthenticationController>();
-    final AuthService authService = AuthService();
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -42,8 +41,17 @@ class LoginPassword extends StatelessWidget {
                 keybord: authenticationController.keyboardPassword,
                 title: 'Qual sua senha?',
                 onPressed: () async {
-                  await authService.login(authenticationController.email.text, authenticationController.password.text);
-                  Navigator.pushNamed(context, '/home');
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) => const LoadingModal(),
+                  );
+                  if (await authenticationController.loginUser()) {
+                    Navigator.of(context).pop();
+                    Navigator.pushNamed(context, '/home');
+                  } else {
+                    Navigator.of(context).pop();
+                    print('Login error');
+                  }
                 },
               ),
             ],
