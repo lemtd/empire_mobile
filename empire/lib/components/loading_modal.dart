@@ -7,10 +7,10 @@ class LoadingModal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromARGB(126, 255, 255, 255),
+      color: const Color.fromARGB(126, 255, 255, 255),
       child: const Center(
         child: SpinKitFadingCircle(
-          color: const Color(0xFFF5D70A),
+          color: Color(0xFFF5D70A),
           size: 50.0,
         ),
       ),
