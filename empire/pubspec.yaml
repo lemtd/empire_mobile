@@ -118,6 +118,12 @@ flutter:
     - lib/images/avatar2.png
     - lib/images/noto_fire.png
     - lib/images/arrow.png
+    - lib/images/soccer_pitch.png
+    - lib/images/yellow.png
+    - lib/images/red.png
+    - lib/images/link.png
+    - lib/images/paramount.png
+    - lib/images/referee.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
