@@ -3,7 +3,9 @@ import 'package:empire/components/team_info.dart';
 import 'package:flutter/material.dart';
 
 class CardMatch extends StatelessWidget {
-  const CardMatch({super.key});
+  final bool isMatchPage;
+
+  const CardMatch({super.key, required this.isMatchPage});
 
   @override
   Widget build(BuildContext context) {
@@ -134,9 +136,15 @@ class CardMatch extends StatelessWidget {
           Container(
             color: const Color.fromARGB(255, 138, 138, 138),
             height: 0.3,
-            width: 350,
+            width: 300,
           ),
-          InkWell(onTap: () {}, child: const Text('Ver mais'))
+          !isMatchPage
+              ? InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/match');
+                  },
+                  child: const Text('Ver mais'))
+              : Container()
         ],
       ),
     );
