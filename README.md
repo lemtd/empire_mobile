@@ -23,3 +23,12 @@ To build the application, follow the step-by-step instructions:
 - Update your project's dependencies with the **flutter pub get** command to ensure that all packages are in the correct version
 - Run the **flutter pub run build_runner build** command to automate code generation in the Flutter project
 - Finally, run **flutter run**
+
+## APK
+If you want to access the APK more quickly, you can find the app's APK at:
+
+> /lib
+
+> |-- /apk
+
+> |-- |-- app-release.apk
