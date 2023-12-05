@@ -3,10 +3,13 @@ import 'package:empire/modules/initial/app_controller.dart';
 import 'package:empire/routes.dart';
 import 'package:empire/src/repositories/login_repository.dart';
 import 'package:empire/src/repositories/match_repository.dart';
+import 'package:empire/src/repositories/sports_repository.dart';
 import 'package:empire/src/states/login_state.dart';
 import 'package:empire/src/states/match_state.dart';
+import 'package:empire/src/states/sports_state.dart';
 import 'package:empire/src/stores/login_store.dart';
 import 'package:empire/src/stores/match_store.dart';
+import 'package:empire/src/stores/sports_store.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
@@ -27,6 +30,14 @@ setupLocator() {
         getIt<MatchState>(),
         getIt<MatchRepository>(),
       ));
-  getIt.registerLazySingleton<AppController>(
-      () => AppController(getIt<MatchStore>()));
+  getIt.registerLazySingleton<SportsRepository>(() => SportsRepository());
+  getIt.registerLazySingleton<SportsState>(() => SportsState());
+  getIt.registerLazySingleton<SportsStore>(() => SportsStore(
+        getIt<SportsState>(),
+        getIt<SportsRepository>(),
+      ));
+  getIt.registerLazySingleton<AppController>(() => AppController(
+        getIt<MatchStore>(),
+        getIt<SportsStore>(),
+      ));
 }
