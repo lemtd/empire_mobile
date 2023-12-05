@@ -1,5 +1,5 @@
 import 'package:empire/locator.dart';
-import 'package:empire/modules/authentiction/authentication_controller.dart';
+import 'package:empire/modules/authentication/authentication_controller.dart';
 import 'package:empire/src/repositories/login_repository.dart';
 import 'package:empire/src/states/login_state.dart';
 import 'package:shared_preferences/shared_preferences.dart';

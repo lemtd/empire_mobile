@@ -1,4 +1,4 @@
-import 'package:empire/modules/authentiction/authentication_controller.dart';
+import 'package:empire/modules/authentication/authentication_controller.dart';
 import 'package:empire/modules/home/home_controller.dart';
 import 'package:empire/modules/initial/app_controller.dart';
 import 'package:empire/routes.dart';

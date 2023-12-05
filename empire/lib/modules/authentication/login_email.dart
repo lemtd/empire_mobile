@@ -1,6 +1,6 @@
 import 'package:empire/components/field.dart';
 import 'package:empire/locator.dart';
-import 'package:empire/modules/authentiction/authentication_controller.dart';
+import 'package:empire/modules/authentication/authentication_controller.dart';
 import 'package:flutter/material.dart';
 
 class LoginEmail extends StatefulWidget {

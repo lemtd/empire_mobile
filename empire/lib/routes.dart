@@ -1,5 +1,5 @@
-import 'package:empire/modules/authentiction/login_email.dart';
-import 'package:empire/modules/authentiction/login_password.dart';
+import 'package:empire/modules/authentication/login_email.dart';
+import 'package:empire/modules/authentication/login_password.dart';
 import 'package:empire/modules/home/home_page.dart';
 import 'package:empire/modules/initial/app_page.dart';
 import 'package:empire/modules/match/match_page.dart';
