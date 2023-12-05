@@ -21,11 +21,13 @@ class CardSports extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.network(
-            img,
-            height: 31,
-            width: 31,
-            fit: BoxFit.cover,
+          ClipOval(
+            child: Image.network(
+              img,
+              height: 31,
+              width: 31,
+              fit: BoxFit.cover,
+            ),
           ),
           const SizedBox(height: 8),
           Text(

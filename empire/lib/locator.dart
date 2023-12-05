@@ -11,6 +11,7 @@ import 'package:empire/src/repositories/tip_repository.dart';
 import 'package:empire/src/repositories/won_bet_repository.dart';
 import 'package:empire/src/services/championship_service.dart';
 import 'package:empire/src/services/sports_service.dart';
+import 'package:empire/src/services/tip_service.dart';
 import 'package:empire/src/services/won_bet_service.dart';
 import 'package:empire/src/states/bonus_state.dart';
 import 'package:empire/src/states/championship_state.dart';
@@ -82,6 +83,9 @@ setupLocator() {
         getIt<WonBetState>(),
         getIt<WonBetRepository>(),
       ));
+  getIt.registerLazySingleton<TipService>(() => TipService(
+        repository: getIt<TipRepository>(),
+      ));
   getIt.registerLazySingleton<TipRepository>(() => TipRepository());
   getIt.registerLazySingleton<TipState>(() => TipState());
   getIt.registerLazySingleton<TipStore>(() => TipStore(
@@ -98,5 +102,6 @@ setupLocator() {
         getIt<SportsService>(),
         getIt<ChampionshipService>(),
         getIt<WonBetService>(),
+        getIt<TipService>(),
       ));
 }

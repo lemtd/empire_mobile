@@ -16,7 +16,7 @@ class AllTab extends StatelessWidget {
         const BannerSection(),
         ChampionshipSection(),
         const MatchSection(),
-        const TipSection(),
+        TipSection(),
         const BonusSection(),
         const LastBetSection(),
         const Padding(

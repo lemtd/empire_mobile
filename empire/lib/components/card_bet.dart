@@ -31,21 +31,23 @@ class CardBet extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.network(
-            avatar,
-              height: 40,
-              width: 40,
-              fit: BoxFit.cover),
+          ClipOval(
+            child: Image.network(
+              avatar,
+                height: 40,
+                width: 40,
+                fit: BoxFit.cover),
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(name, style: TextStyle(fontSize: 14),),
-              Text(description, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+              Text(name, style: const TextStyle(fontSize: 14),),
+              Text(description, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
               Row(
                 children: [
-                  Text(teams, style: TextStyle(fontSize: 10),),
-                  Icon(Icons.circle, size: 4,),
-                  Text(time, style: TextStyle(fontSize: 10),),
+                  Text(teams, style: const TextStyle(fontSize: 10),),
+                  const Icon(Icons.circle, size: 4,),
+                  Text(time, style: const TextStyle(fontSize: 10),),
                 ],
               ),
             ],
