@@ -46,15 +46,13 @@ class LoginPassword extends StatelessWidget {
                     barrierDismissible: false,
                     builder: (BuildContext context) => const LoadingModal(),
                   );
+                  if (await authenticationController.loginUser()) {
                     Navigator.of(context).pop();
                     Navigator.pushNamed(context, '/home');
-                  // if (await authenticationController.loginUser()) {
-                  //   Navigator.of(context).pop();
-                  //   Navigator.pushNamed(context, '/home');
-                  // } else {
-                  //   Navigator.of(context).pop();
-                  //   print('Login error');
-                  // }
+                  } else {
+                    Navigator.of(context).pop();
+                    print('Login error');
+                  }
                 },
               ),
             ],
