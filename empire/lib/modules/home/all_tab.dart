@@ -17,7 +17,7 @@ class AllTab extends StatelessWidget {
         ChampionshipSection(),
         const MatchSection(),
         TipSection(),
-        const BonusSection(),
+        BonusSection(),
         const LastBetSection(),
         const Padding(
           padding: EdgeInsets.only(top: 25),

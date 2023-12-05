@@ -1,8 +1,12 @@
 import 'package:empire/components/card_bonus.dart';
+import 'package:empire/locator.dart';
+import 'package:empire/modules/home/home_controller.dart';
 import 'package:flutter/material.dart';
 
 class BonusSection extends StatelessWidget {
-  const BonusSection({super.key});
+  BonusSection({super.key});
+
+  final homeController = getIt<HomeController>();
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +28,7 @@ class BonusSection extends StatelessWidget {
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 )),
           ),
-          const SizedBox(
+          SizedBox(
             height: 200,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -32,11 +36,11 @@ class BonusSection extends StatelessWidget {
                 CardBonus(
                   img: 'lib/images/stake.png',
                   title:
-                      'Exclusivo 10% de Retorno e 200% de Bônus de Boas-Vindas até \$1000 em Crypto',
+                      homeController.appController.listBonus[0].platform,
                 ),
                 CardBonus(
                   img: 'lib/images/bet365.png',
-                  title: 'Créditos de Aposta até R\$200 na hora!',
+                  title:homeController.appController.listBonus[1].platform,
                 )
               ],
             ),

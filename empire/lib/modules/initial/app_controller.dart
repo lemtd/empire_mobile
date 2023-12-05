@@ -1,7 +1,9 @@
+import 'package:empire/src/models/bonus_model.dart';
 import 'package:empire/src/models/championship_model.dart';
 import 'package:empire/src/models/sports_model.dart';
 import 'package:empire/src/models/tip_model.dart';
 import 'package:empire/src/models/won_bet_model.dart';
+import 'package:empire/src/services/bonus_service.dart';
 import 'package:empire/src/services/championship_service.dart';
 import 'package:empire/src/services/sports_service.dart';
 import 'package:empire/src/services/tip_service.dart';
@@ -29,8 +31,9 @@ abstract class _AppControllerBase with Store {
   final ChampionshipService championshipService;
   final WonBetService wonBetService;
   final TipService tipService;
+  final BonusService bonusService;
   
-  _AppControllerBase(this.matchStore, this.sportsStore, this.championshipStore, this.bonusStore, this.wonBetStore, this.tipStore, this.sportsService, this.championshipService, this.wonBetService, this.tipService);
+  _AppControllerBase(this.matchStore, this.sportsStore, this.championshipStore, this.bonusStore, this.wonBetStore, this.tipStore, this.sportsService, this.championshipService, this.wonBetService, this.tipService, this.bonusService);
 
   @observable
   List<SportsModel> listSports = [];
@@ -43,6 +46,10 @@ abstract class _AppControllerBase with Store {
 
   @observable
   List<TipModel> listTips = [];
+
+  @observable
+  List<BonusModel> listBonus = [];
+
 
   Future<void> initStore() async {
     await matchStore.fetchMatches();
@@ -58,6 +65,7 @@ abstract class _AppControllerBase with Store {
     await setListChampionships();
     await setListWonBets();
     await setListTips();
+    await setListBonus();
   }
 
   @action
@@ -81,6 +89,12 @@ abstract class _AppControllerBase with Store {
   @action
   Future<bool> setListTips() async {
     listTips = await tipService.getTips();
+    return true;
+  }
+
+  @action
+  Future<bool> setListBonus() async {
+    listBonus = await bonusService.getBonus();
     return true;
   }
 }
