@@ -1,12 +1,12 @@
 import 'package:empire/components/card_sports.dart';
 import 'package:empire/locator.dart';
-import 'package:empire/modules/sports/sports_controller.dart';
+import 'package:empire/modules/home/home_controller.dart';
 import 'package:flutter/material.dart';
 
 class SportsPage extends StatelessWidget {
   SportsPage({super.key});
 
-  final sportsController = getIt<SportsController>();
+  final homeController = getIt<HomeController>();
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +82,7 @@ class SportsPage extends StatelessWidget {
                 child: Wrap(
                   alignment: WrapAlignment.start,
                   spacing: 8.0,
-                  children: sportsController.list.map((sport) {
+                  children: homeController.appController.listSports.map((sport) {
                     return CardSports(
                       key: Key(sport.id),
                       img: sport.image,
