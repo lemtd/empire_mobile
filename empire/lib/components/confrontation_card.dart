@@ -33,7 +33,7 @@ class ConfrontationCard extends StatelessWidget {
                   Image(
                       height: 37,
                       width: 37,
-                      image: AssetImage('lib/images/image2.png'),
+                      image: AssetImage('assets/images/image2.png'),
                       fit: BoxFit.cover),
                   Text('Brasileirão serie A',
                       style: TextStyle(
@@ -51,7 +51,7 @@ class ConfrontationCard extends StatelessWidget {
                   Image(
                       height: 37,
                       width: 37,
-                      image: AssetImage('lib/images/sp.png'),
+                      image: AssetImage('assets/images/sp.png'),
                       fit: BoxFit.cover),
                   Column(
                     children: [
@@ -70,7 +70,7 @@ class ConfrontationCard extends StatelessWidget {
                   Image(
                       height: 37,
                       width: 37,
-                      image: AssetImage('lib/images/palmeiras.png'),
+                      image: AssetImage('assets/images/palmeiras.png'),
                       fit: BoxFit.cover),
                 ],
               ),

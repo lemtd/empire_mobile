@@ -82,7 +82,7 @@ class MatchPage extends StatelessWidget {
                         children: [
                           const BetField(
                               title: 'Casa',
-                              img: 'lib/images/bet.png',
+                              img: 'assets/images/bet.png',
                               value: '3.2',
                               widthImg: 60,
                               heightImg: 21),
@@ -93,7 +93,7 @@ class MatchPage extends StatelessWidget {
                           ),
                           const BetField(
                               title: 'x',
-                              img: 'lib/images/betsafe.png',
+                              img: 'assets/images/betsafe.png',
                               value: '2.6',
                               widthImg: 67,
                               heightImg: 16),
@@ -104,7 +104,7 @@ class MatchPage extends StatelessWidget {
                           ),
                           const BetField(
                               title: 'Fora',
-                              img: 'lib/images/betsson.png',
+                              img: 'assets/images/betsson.png',
                               value: '3.4',
                               widthImg: 52,
                               heightImg: 11),

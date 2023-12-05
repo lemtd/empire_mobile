@@ -35,7 +35,7 @@ class _LoginEmailState extends State<LoginEmail> {
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
-                              'lib/images/arrow_left.png'),
+                              'assets/images/arrow_left.png'),
                           fit: BoxFit
                               .contain,
                         ),

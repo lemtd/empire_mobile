@@ -47,7 +47,7 @@ class OddsCard extends StatelessWidget {
                             Image(
                                 height: 11,
                                 width: 57,
-                                image: AssetImage('lib/images/bet.png'),
+                                image: AssetImage('assets/images/bet.png'),
                                 fit: BoxFit.cover),
                             Text('Patrocinadora'),
                           ],
@@ -55,12 +55,12 @@ class OddsCard extends StatelessWidget {
                         Image(
                             height: 11,
                             width: 57,
-                            image: AssetImage('lib/images/betsafe.png'),
+                            image: AssetImage('assets/images/betsafe.png'),
                             fit: BoxFit.cover),
                         Image(
                             height: 11,
                             width: 57,
-                            image: AssetImage('lib/images/betsson.png'),
+                            image: AssetImage('assets/images/betsson.png'),
                             fit: BoxFit.cover),
                       ],
                     ),
@@ -85,7 +85,7 @@ class OddsCard extends StatelessWidget {
                                 Image(
                                     height: 40,
                                     width: 67,
-                                    image: AssetImage('lib/images/sp.png'),
+                                    image: AssetImage('assets/images/sp.png'),
                                     fit: BoxFit.cover),
                               ],
                             ),
@@ -97,7 +97,7 @@ class OddsCard extends StatelessWidget {
                                 Image(
                                     height: 40,
                                     width: 67,
-                                    image: AssetImage('lib/images/palmeiras.png'),
+                                    image: AssetImage('assets/images/palmeiras.png'),
                                     fit: BoxFit.cover),
                               ],
                             ),

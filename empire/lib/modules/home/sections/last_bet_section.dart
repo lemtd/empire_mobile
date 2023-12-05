@@ -29,7 +29,7 @@ class LastBetSection extends StatelessWidget {
                   Image(
                       height: 24,
                       width: 24,
-                      image: AssetImage('lib/images/noto_fire.png'),
+                      image: AssetImage('assets/images/noto_fire.png'),
                       fit: BoxFit.cover),
                   Text(
                     'Últimas apostas ganhas',

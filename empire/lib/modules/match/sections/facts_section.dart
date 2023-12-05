@@ -20,11 +20,11 @@ class FactsSection extends StatelessWidget {
         CarouselSlider(
             items: const [
               FactsCard(
-                img: 'lib/images/sp.png',
+                img: 'assets/images/sp.png',
                 team: 'São Paulo',
               ),
               FactsCard(
-                img: 'lib/images/palmeiras.png',
+                img: 'assets/images/palmeiras.png',
                 team: 'Palmeiras',
               ),
             ],

@@ -41,7 +41,7 @@ class TeamsSection extends StatelessWidget {
                   child: const Image(
                       height: 14,
                       width: 8,
-                      image: AssetImage('lib/images/arrow.png'),
+                      image: AssetImage('assets/images/arrow.png'),
                       fit: BoxFit.cover),
                 ),
                 const Text(
@@ -61,7 +61,7 @@ class TeamsSection extends StatelessWidget {
               const Image(
                   height: 262,
                   width: 379,
-                  image: AssetImage('lib/images/soccer_pitch.png'),
+                  image: AssetImage('assets/images/soccer_pitch.png'),
                   fit: BoxFit.cover),
               Positioned(
                 top: 65,
@@ -81,7 +81,7 @@ class TeamsSection extends StatelessWidget {
                     child: Image(
                         height: 32,
                         width: 32,
-                        image: AssetImage('lib/images/sp.png'),
+                        image: AssetImage('assets/images/sp.png'),
                         fit: BoxFit.cover),
                   ),
                 ),
@@ -104,7 +104,7 @@ class TeamsSection extends StatelessWidget {
                     child: Image(
                         height: 32,
                         width: 32,
-                        image: AssetImage('lib/images/palmeiras.png'),
+                        image: AssetImage('assets/images/palmeiras.png'),
                         fit: BoxFit.cover),
                   ),
                 ),

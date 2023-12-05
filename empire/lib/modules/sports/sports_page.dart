@@ -42,7 +42,7 @@ class SportsPage extends StatelessWidget {
                     child: const Image(
                         height: 14,
                         width: 8,
-                        image: AssetImage('lib/images/arrow.png'),
+                        image: AssetImage('assets/images/arrow.png'),
                         fit: BoxFit.cover),
                   ),
                   const Text(

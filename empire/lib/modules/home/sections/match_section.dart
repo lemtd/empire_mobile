@@ -40,7 +40,7 @@ class MatchSection extends StatelessWidget {
                     child: const Image(
                         height: 16,
                         width: 21,
-                        image: AssetImage('lib/images/arrow_right.png'),
+                        image: AssetImage('assets/images/arrow_right.png'),
                         fit: BoxFit.cover),
                   ),
                 )

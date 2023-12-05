@@ -117,7 +117,7 @@ class CardMatch extends StatelessWidget {
             children: [
               BetField(
                   title: 'Casa',
-                  img: 'lib/images/bet.png',
+                  img: 'assets/images/bet.png',
                   value: bet,
                   widthImg: 60,
                   heightImg: 21),
@@ -128,7 +128,7 @@ class CardMatch extends StatelessWidget {
               ),
               BetField(
                   title: 'x',
-                  img: 'lib/images/betsafe.png',
+                  img: 'assets/images/betsafe.png',
                   value: betsafe,
                   widthImg: 67,
                   heightImg: 16),
@@ -139,7 +139,7 @@ class CardMatch extends StatelessWidget {
               ),
               BetField(
                   title: 'Fora',
-                  img: 'lib/images/betsson.png',
+                  img: 'assets/images/betsson.png',
                   value: betsson,
                   widthImg: 52,
                   heightImg: 11),

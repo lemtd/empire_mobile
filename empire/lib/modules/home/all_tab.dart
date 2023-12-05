@@ -28,7 +28,7 @@ class AllTab extends StatelessWidget {
               child: Image(
                 height: 36,
                 width: 143,
-                image: AssetImage('lib/images/empire.png'),
+                image: AssetImage('assets/images/empire.png'),
               ),
             ),
           ),

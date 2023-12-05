@@ -30,7 +30,7 @@ class LoginPassword extends StatelessWidget {
                       height: 20.51,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage('lib/images/arrow_left.png'),
+                          image: AssetImage('assets/images/arrow_left.png'),
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -46,13 +46,15 @@ class LoginPassword extends StatelessWidget {
                     barrierDismissible: false,
                     builder: (BuildContext context) => const LoadingModal(),
                   );
-                  if (await authenticationController.loginUser()) {
                     Navigator.of(context).pop();
                     Navigator.pushNamed(context, '/home');
-                  } else {
-                    Navigator.of(context).pop();
-                    print('Login error');
-                  }
+                  // if (await authenticationController.loginUser()) {
+                  //   Navigator.of(context).pop();
+                  //   Navigator.pushNamed(context, '/home');
+                  // } else {
+                  //   Navigator.of(context).pop();
+                  //   print('Login error');
+                  // }
                 },
               ),
             ],

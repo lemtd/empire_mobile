@@ -34,12 +34,12 @@ class BonusSection extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 CardBonus(
-                  img: 'lib/images/stake.png',
+                  img: 'assets/images/stake.png',
                   title:
                       homeController.appController.listBonus[0].platform,
                 ),
                 CardBonus(
-                  img: 'lib/images/bet365.png',
+                  img: 'assets/images/bet365.png',
                   title:homeController.appController.listBonus[1].platform,
                 )
               ],
@@ -68,7 +68,7 @@ class BonusSection extends StatelessWidget {
                     child: const Image(
                         height: 16,
                         width: 21,
-                        image: AssetImage('lib/images/arrow_right.png'),
+                        image: AssetImage('assets/images/arrow_right.png'),
                         fit: BoxFit.cover),
                   ),
                 )
