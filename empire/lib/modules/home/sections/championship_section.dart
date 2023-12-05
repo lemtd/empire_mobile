@@ -25,8 +25,8 @@ class ChampionshipSection extends StatelessWidget {
           ),
           const SizedBox(height: 10,),
           CarouselSlider(
-              items: homeController.appController.listChampionships.map((sport) {
-                    return CardChampionship(img: sport.image);
+              items: homeController.appController.listChampionships.map((championship) {
+                    return CardChampionship(img: championship.image);
                   }).toList(),
               options: CarouselOptions(
                 height: 80,
