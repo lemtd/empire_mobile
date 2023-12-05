@@ -1,3 +1,4 @@
+import 'package:empire/src/stores/tip_store.dart';
 import 'package:empire/src/stores/won_bet_store.dart';
 import 'package:empire/src/stores/bonus_store.dart';
 import 'package:empire/src/stores/championship_store.dart';
@@ -15,8 +16,9 @@ abstract class _AppControllerBase with Store {
   final ChampionshipStore championshipStore;
   final BonusStore bonusStore;
   final WonBetStore wonBetStore;
+  final TipStore tipStore;
   
-  _AppControllerBase(this.matchStore, this.sportsStore, this.championshipStore, this.bonusStore, this.wonBetStore);
+  _AppControllerBase(this.matchStore, this.sportsStore, this.championshipStore, this.bonusStore, this.wonBetStore, this.tipStore);
 
   Future<void> init() async {
     await matchStore.fetchMatches();
@@ -24,6 +26,7 @@ abstract class _AppControllerBase with Store {
     await championshipStore.fetchChampionships();
     await bonusStore.fetchBonus();
     await wonBetStore.fetchWonBets();
+    await tipStore.fetchTips();
   }
 
   // @action

@@ -6,13 +6,16 @@ import 'package:empire/src/repositories/championship_repository.dart';
 import 'package:empire/src/repositories/login_repository.dart';
 import 'package:empire/src/repositories/match_repository.dart';
 import 'package:empire/src/repositories/sports_repository.dart';
+import 'package:empire/src/repositories/tip_repository.dart';
 import 'package:empire/src/repositories/won_bet_repository.dart';
 import 'package:empire/src/states/bonus_state.dart';
 import 'package:empire/src/states/championship_state.dart';
 import 'package:empire/src/states/login_state.dart';
 import 'package:empire/src/states/match_state.dart';
 import 'package:empire/src/states/sports_state.dart';
+import 'package:empire/src/states/tip_state.dart';
 import 'package:empire/src/states/won_bet_state.dart';
+import 'package:empire/src/stores/tip_store.dart';
 import 'package:empire/src/stores/won_bet_store.dart';
 import 'package:empire/src/stores/bonus_store.dart';
 import 'package:empire/src/stores/championship_store.dart';
@@ -63,11 +66,18 @@ setupLocator() {
         getIt<WonBetState>(),
         getIt<WonBetRepository>(),
       ));
+  getIt.registerLazySingleton<TipRepository>(() => TipRepository());
+  getIt.registerLazySingleton<TipState>(() => TipState());
+  getIt.registerLazySingleton<TipStore>(() => TipStore(
+        getIt<TipState>(),
+        getIt<TipRepository>(),
+      ));
   getIt.registerLazySingleton<AppController>(() => AppController(
         getIt<MatchStore>(),
         getIt<SportsStore>(),
         getIt<ChampionshipStore>(),
         getIt<BonusStore>(),
         getIt<WonBetStore>(),
+        getIt<TipStore>(),
       ));
 }
