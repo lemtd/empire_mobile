@@ -20,7 +20,7 @@ class LoginStore {
       await _saveTokens(response.authToken, response.refreshToken);
       return true;
     } catch (e) {
-      print("Erro ao fazer login: $e");
+      print("Login failed: $e");
       return false;
     } finally {
       _state.setLoading(false);

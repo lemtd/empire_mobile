@@ -17,8 +17,8 @@ class LoginRepository {
       return LoginModel.fromJson(data);
     } else {
       print(
-          'Falha ao realizar o login. Status: ${response.statusCode}, Body: ${response.body}');
-      throw Exception('Falha ao realizar o login');
+          'Login failed. Status: ${response.statusCode}, Body: ${response.body}');
+      throw Exception('Login failed');
     }
   }
 }
