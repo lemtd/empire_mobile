@@ -1,4 +1,3 @@
-import 'package:empire/src/models/sports_model.dart';
 import 'package:empire/src/repositories/sports_repository.dart';
 import 'package:empire/src/states/sports_state.dart';
 
@@ -8,18 +7,13 @@ class SportsStore {
 
   SportsStore(this._state, this._repository);
 
-  Future<bool> fetchSports() async {
+  Future<void> fetchSports() async {
     _state.setLoading(true);
 
     try {
-      final List<SportsModel> sports = await _repository.fetchSports();
-      if (sports.isNotEmpty) {
-        return true;
-      }
-      return false;
+      await _repository.fetchSports();
     } catch (e) {
       print("Failed to load data");
-      return false;
     } finally {
       _state.setLoading(false);
     }
