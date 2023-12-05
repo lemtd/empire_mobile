@@ -11,15 +11,15 @@ class AllTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        BannerSection(),
+        const BannerSection(),
         ChampionshipSection(),
-        MatchSection(),
-        TipSection(),
-        BonusSection(),
-        LastBetSection(),
-        Padding(
+        const MatchSection(),
+        const TipSection(),
+        const BonusSection(),
+        const LastBetSection(),
+        const Padding(
           padding: EdgeInsets.only(top: 25),
           child: SizedBox(
             height: 125,
