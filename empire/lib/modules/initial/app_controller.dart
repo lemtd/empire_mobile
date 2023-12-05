@@ -1,3 +1,7 @@
+import 'package:empire/src/models/championship_model.dart';
+import 'package:empire/src/models/sports_model.dart';
+import 'package:empire/src/services/championship_service.dart';
+import 'package:empire/src/services/sports_service.dart';
 import 'package:empire/src/stores/tip_store.dart';
 import 'package:empire/src/stores/won_bet_store.dart';
 import 'package:empire/src/stores/bonus_store.dart';
@@ -17,10 +21,18 @@ abstract class _AppControllerBase with Store {
   final BonusStore bonusStore;
   final WonBetStore wonBetStore;
   final TipStore tipStore;
+  final SportsService sportsService;
+  final ChampionshipService championshipService;
   
-  _AppControllerBase(this.matchStore, this.sportsStore, this.championshipStore, this.bonusStore, this.wonBetStore, this.tipStore);
+  _AppControllerBase(this.matchStore, this.sportsStore, this.championshipStore, this.bonusStore, this.wonBetStore, this.tipStore, this.sportsService, this.championshipService);
 
-  Future<void> init() async {
+  @observable
+  List<SportsModel> listSports = [];
+
+  @observable
+  List<ChampionshipModel> listChampionships = [];
+
+  Future<void> initStore() async {
     await matchStore.fetchMatches();
     await sportsStore.fetchSports();
     await championshipStore.fetchChampionships();
@@ -29,8 +41,20 @@ abstract class _AppControllerBase with Store {
     await tipStore.fetchTips();
   }
 
-  // @action
-  // void changeValue() {
-  //   isObscure = !isObscure;
-  // }
+  Future<void> initValues() async {
+    await setListSports();
+    await setListChampionships();
+  }
+
+  @action
+  Future<bool> setListSports() async {
+    listSports = await sportsService.getSports();
+    return true;
+  }
+
+  @action
+  Future<bool> setListChampionships() async {
+    listChampionships = await championshipService.getChampionships();
+    return true;
+  }
 }
