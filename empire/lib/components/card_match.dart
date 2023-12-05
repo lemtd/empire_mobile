@@ -1,14 +1,26 @@
 import 'package:empire/components/bet_field.dart';
 import 'package:empire/components/team_info.dart';
+import 'package:empire/locator.dart';
+import 'package:empire/modules/home/home_controller.dart';
 import 'package:flutter/material.dart';
 
 class CardMatch extends StatelessWidget {
   final bool isMatchPage;
+  final String img_a;
+  final String team_a;
+  final String img_b;
+  final String team_b;
+  final String bet;
+  final String betsafe;
+  final String betsson;
+  final int id;
 
-  const CardMatch({super.key, required this.isMatchPage});
+  CardMatch({super.key, required this.isMatchPage, required this.img_a, required this.img_b, required this.team_a, required this.team_b, required this.bet, required this.betsafe, required this.betsson, required this.id});
 
   @override
   Widget build(BuildContext context) {
+    final homeController = getIt<HomeController>();
+
     return Container(
       margin: const EdgeInsets.only(top: 15, bottom: 15, left: 25, right: 25),
       height: 400,
@@ -25,15 +37,15 @@ class CardMatch extends StatelessWidget {
         ],
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const TeamInfo(
-                img: 'lib/images/sp.png',
-                name: 'São Paulo',
+              TeamInfo(
+                img: img_a,
+                name: team_a,
               ),
               Column(
                 children: [
@@ -72,19 +84,19 @@ class CardMatch extends StatelessWidget {
                   ),
                 ],
               ),
-              const TeamInfo(
-                img: 'lib/images/palmeiras.png',
-                name: 'Palmeiras',
+              TeamInfo(
+                img: img_b,
+                name: team_b,
               )
             ],
           ),
           const SizedBox(
-            width: 100,
+            width: 80,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text(
-                  '2',
+                  '',
                   style: TextStyle(fontSize: 50),
                 ),
                 Text(
@@ -93,7 +105,7 @@ class CardMatch extends StatelessWidget {
                       fontSize: 50, color: Color.fromARGB(131, 0, 0, 0)),
                 ),
                 Text(
-                  '2',
+                  '',
                   style: TextStyle(fontSize: 50),
                 ),
               ],
@@ -103,10 +115,10 @@ class CardMatch extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const BetField(
+              BetField(
                   title: 'Casa',
                   img: 'lib/images/bet.png',
-                  value: '3.2',
+                  value: bet,
                   widthImg: 60,
                   heightImg: 21),
               Container(
@@ -114,10 +126,10 @@ class CardMatch extends StatelessWidget {
                 height: 30,
                 width: 0.3,
               ),
-              const BetField(
+              BetField(
                   title: 'x',
                   img: 'lib/images/betsafe.png',
-                  value: '2.6',
+                  value: betsafe,
                   widthImg: 67,
                   heightImg: 16),
               Container(
@@ -125,10 +137,10 @@ class CardMatch extends StatelessWidget {
                 height: 30,
                 width: 0.3,
               ),
-              const BetField(
+              BetField(
                   title: 'Fora',
                   img: 'lib/images/betsson.png',
-                  value: '3.4',
+                  value: betsson,
                   widthImg: 52,
                   heightImg: 11),
             ],
@@ -141,6 +153,7 @@ class CardMatch extends StatelessWidget {
           !isMatchPage
               ? InkWell(
                   onTap: () {
+                    homeController.appController.setMatch(homeController.appController.listMatch[id]);
                     Navigator.pushNamed(context, '/match');
                   },
                   child: const Text('Ver mais'))

@@ -8,12 +8,15 @@ class TeamInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image(height: 60, width: 62, image: AssetImage(img), fit: BoxFit.cover),
-        Text(name)
-      ],
+    return SizedBox(
+      height: 90,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          ClipOval(child: Image.network(img, height: 60, width: 62, fit: BoxFit.cover)),
+          Text(name)
+        ],
+      ),
     );
   }
 }

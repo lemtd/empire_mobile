@@ -11,6 +11,7 @@ import 'package:empire/src/repositories/tip_repository.dart';
 import 'package:empire/src/repositories/won_bet_repository.dart';
 import 'package:empire/src/services/bonus_service.dart';
 import 'package:empire/src/services/championship_service.dart';
+import 'package:empire/src/services/match_service.dart';
 import 'package:empire/src/services/sports_service.dart';
 import 'package:empire/src/services/tip_service.dart';
 import 'package:empire/src/services/won_bet_service.dart';
@@ -44,6 +45,9 @@ setupLocator() {
       () => AuthenticationController(getIt<LoginStore>()));
   getIt.registerLazySingleton<HomeController>(
       () => HomeController(getIt<AppController>(),));
+  getIt.registerLazySingleton<MatchService>(() => MatchService(
+        repository: getIt<MatchRepository>(),
+      ));
   getIt.registerLazySingleton<MatchRepository>(() => MatchRepository());
   getIt.registerLazySingleton<MatchState>(() => MatchState());
   getIt.registerLazySingleton<MatchStore>(() => MatchStore(
@@ -108,5 +112,6 @@ setupLocator() {
         getIt<WonBetService>(),
         getIt<TipService>(),
         getIt<BonusService>(),
+        getIt<MatchService>(),
       ));
 }

@@ -1,4 +1,6 @@
 import 'package:empire/components/card_match.dart';
+import 'package:empire/locator.dart';
+import 'package:empire/modules/home/home_controller.dart';
 import 'package:flutter/material.dart';
 
 class MatchSection extends StatelessWidget {
@@ -6,17 +8,15 @@ class MatchSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final homeController = getIt<HomeController>();
+
     return Container(
       margin: const EdgeInsets.only(top: 15, bottom: 15),
       child: Column(
         children: [
           //widget tabbar
-          const CardMatch(
-            isMatchPage: false,
-          ),
-          const CardMatch(
-            isMatchPage: false,
-          ),
+          CardMatch(isMatchPage: false, img_a: homeController.appController.listMatch[0].teamAImage, img_b: homeController.appController.listMatch[0].teamBImage, team_a: homeController.appController.listMatch[0].teamA, team_b: homeController.appController.listMatch[0].teamB, bet: homeController.appController.listMatch[0].odds1xbet.toString(), betsafe: homeController.appController.listMatch[0].oddsBetsafe.toString(), betsson: homeController.appController.listMatch[0].oddsBetsson.toString(), id: 0,),
+          CardMatch(isMatchPage: false, img_a: homeController.appController.listMatch[1].teamAImage, img_b: homeController.appController.listMatch[1].teamBImage, team_a: homeController.appController.listMatch[1].teamA, team_b: homeController.appController.listMatch[1].teamB, bet: homeController.appController.listMatch[1].odds1xbet.toString(), betsafe: homeController.appController.listMatch[1].oddsBetsafe.toString(), betsson: homeController.appController.listMatch[1].oddsBetsson.toString(), id: 1,),
           SizedBox(
             width: 280,
             child: Row(
