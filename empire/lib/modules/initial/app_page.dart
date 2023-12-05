@@ -1,12 +1,18 @@
 import 'package:empire/components/button.dart';
 import 'package:empire/components/button_icon.dart';
+import 'package:empire/locator.dart';
+import 'package:empire/modules/initial/app_controller.dart';
 import 'package:flutter/material.dart';
 
-class InitialPage extends StatelessWidget {
-  const InitialPage({super.key});
+class AppPage extends StatelessWidget {
+  const AppPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final appController = getIt<AppController>();
+
+    appController.initMatch();
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
