@@ -11,7 +11,8 @@ class AppPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final appController = getIt<AppController>();
 
-    appController.init();
+    appController.initStore();
+    appController.initValues();
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,

@@ -150,7 +150,7 @@ class HomePage extends StatelessWidget {
                       barrierDismissible: false,
                       builder: (BuildContext context) => const LoadingModal(),
                     );
-                    if (await homeController.sportsController.setList()) {
+                    if (await homeController.appController.setListSports()) {
                       Navigator.of(context).pop();
                       Navigator.pushNamed(context, '/sports');
                     }
