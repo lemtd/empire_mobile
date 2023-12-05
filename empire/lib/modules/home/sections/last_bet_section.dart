@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:empire/components/card_bet.dart';
+import 'package:empire/locator.dart';
+import 'package:empire/modules/home/home_controller.dart';
 import 'package:flutter/material.dart';
 
 class LastBetSection extends StatelessWidget {
@@ -7,6 +9,8 @@ class LastBetSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final homeController = getIt<HomeController>();
+
     return SizedBox(
       height: 200,
       child: Container(
@@ -35,32 +39,17 @@ class LastBetSection extends StatelessWidget {
               ),
             ),
             CarouselSlider(
-                items: const [
-                  CardBet(
-                      img: 'lib/images/bet365.png',
-                      name: 'João Felipe Miranda',
-                      description: 'Mais de 2.6 Goals',
-                      teams: 'BRA X ARG',
-                      time: 'Há 10 minutos',
-                      value: '1.44',
-                      avatar: 'lib/images/avatar2.png'),
-                  CardBet(
-                      img: 'lib/images/bet365.png',
-                      name: 'João Felipe Miranda',
-                      description: 'Mais de 2.6 Goals',
-                      teams: 'BRA X ARG',
-                      time: 'Há 10 minutos',
-                      value: '1.44',
-                      avatar: 'lib/images/avatar2.png'),
-                  CardBet(
-                      img: 'lib/images/bet365.png',
-                      name: 'João Felipe Miranda',
-                      description: 'Mais de 2.6 Goals',
-                      teams: 'BRA X ARG',
-                      time: 'Há 10 minutos',
-                      value: '1.44',
-                      avatar: 'lib/images/avatar2.png'),
-                ],
+                items: 
+                homeController.appController.listWonBets.map((bet) {
+                    return CardBet(
+                      img: bet.userAvatar,
+                      name: bet.user,
+                      description: bet.platform,
+                      teams: '',
+                      time: '',
+                      value: bet.score.toString(),
+                      avatar: bet.userAvatar);
+                  }).toList(),
                 options: CarouselOptions(
                     height: 92,
                     enlargeCenterPage: false,

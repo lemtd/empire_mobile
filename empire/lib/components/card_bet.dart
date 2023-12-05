@@ -31,10 +31,10 @@ class CardBet extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image(
+          Image.network(
+            avatar,
               height: 40,
               width: 40,
-              image: AssetImage(avatar),
               fit: BoxFit.cover),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -51,10 +51,9 @@ class CardBet extends StatelessWidget {
             ],
           ),
           Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Image(
+            Image.network(img,
               height: 40,
               width: 40,
-              image: AssetImage(img),
               fit: BoxFit.cover),
               Text(value)
           ],)
