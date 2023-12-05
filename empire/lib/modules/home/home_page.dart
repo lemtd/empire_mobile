@@ -1,5 +1,8 @@
+import 'package:empire/components/loading_modal.dart';
 import 'package:empire/components/tabs_menu.dart';
+import 'package:empire/locator.dart';
 import 'package:empire/modules/home/all_tab.dart';
+import 'package:empire/modules/home/home_controller.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,6 +11,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> drawerKey = GlobalKey();
+    final homeController = getIt<HomeController>();
 
     return DefaultTabController(
       length: 4,
@@ -140,8 +144,16 @@ class HomePage extends StatelessWidget {
                       image: AssetImage('lib/images/whistle.png'),
                       fit: BoxFit.cover),
                   title: const Text("Esportes"),
-                  onTap: () {
-                    Navigator.pushNamed(context, '/sports');
+                  onTap: () async {
+                    showDialog(
+                      context: context,
+                      barrierDismissible: false,
+                      builder: (BuildContext context) => const LoadingModal(),
+                    );
+                    if (await homeController.sportsController.setList()) {
+                      Navigator.of(context).pop();
+                      Navigator.pushNamed(context, '/sports');
+                    }
                   },
                 ),
                 ListTile(

@@ -8,7 +8,9 @@ class CardSports extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Container(
+      margin: const EdgeInsets.all(5),
       width: 113,
       height: 128,
       decoration: BoxDecoration(
@@ -19,13 +21,13 @@ class CardSports extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image(
+          Image.network(
+            img,
             height: 31,
             width: 31,
-            image: AssetImage(img),
             fit: BoxFit.cover,
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
             title,
             style: const TextStyle(fontSize: 16),

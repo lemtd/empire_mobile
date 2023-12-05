@@ -12,7 +12,7 @@ class Routes {
     '/login_email': (_) => const LoginEmail(),
     '/login_password': (_) => const LoginPassword(),
     '/home': (_) => const HomePage(),
-    '/sports': (_) => const SportsPage(),
+    '/sports': (_) => SportsPage(),
     '/match': (_) => const MatchPage(),
   };
 }

@@ -43,6 +43,7 @@ class LoginPassword extends StatelessWidget {
                 onPressed: () async {
                   showDialog(
                     context: context,
+                    barrierDismissible: false,
                     builder: (BuildContext context) => const LoadingModal(),
                   );
                   if (await authenticationController.loginUser()) {

@@ -1,5 +1,7 @@
 import 'package:empire/modules/authentiction/authentication_controller.dart';
+import 'package:empire/modules/home/home_controller.dart';
 import 'package:empire/modules/initial/app_controller.dart';
+import 'package:empire/modules/sports/sports_controller.dart';
 import 'package:empire/routes.dart';
 import 'package:empire/src/repositories/bonus_repository.dart';
 import 'package:empire/src/repositories/championship_repository.dart';
@@ -8,6 +10,7 @@ import 'package:empire/src/repositories/match_repository.dart';
 import 'package:empire/src/repositories/sports_repository.dart';
 import 'package:empire/src/repositories/tip_repository.dart';
 import 'package:empire/src/repositories/won_bet_repository.dart';
+import 'package:empire/src/services/sports_service.dart';
 import 'package:empire/src/states/bonus_state.dart';
 import 'package:empire/src/states/championship_state.dart';
 import 'package:empire/src/states/login_state.dart';
@@ -36,11 +39,19 @@ setupLocator() {
       ));
   getIt.registerLazySingleton<AuthenticationController>(
       () => AuthenticationController(getIt<LoginStore>()));
+  getIt.registerLazySingleton<HomeController>(
+      () => HomeController(getIt<SportsController>()));
   getIt.registerLazySingleton<MatchRepository>(() => MatchRepository());
   getIt.registerLazySingleton<MatchState>(() => MatchState());
   getIt.registerLazySingleton<MatchStore>(() => MatchStore(
         getIt<MatchState>(),
         getIt<MatchRepository>(),
+      ));
+  getIt.registerLazySingleton<SportsController>(() => SportsController(
+        getIt<SportsService>(),
+      ));
+  getIt.registerLazySingleton<SportsService>(() => SportsService(
+        repository: getIt<SportsRepository>(),
       ));
   getIt.registerLazySingleton<SportsRepository>(() => SportsRepository());
   getIt.registerLazySingleton<SportsState>(() => SportsState());
@@ -48,7 +59,8 @@ setupLocator() {
         getIt<SportsState>(),
         getIt<SportsRepository>(),
       ));
-  getIt.registerLazySingleton<ChampionshipRepository>(() => ChampionshipRepository());
+  getIt.registerLazySingleton<ChampionshipRepository>(
+      () => ChampionshipRepository());
   getIt.registerLazySingleton<ChampionshipState>(() => ChampionshipState());
   getIt.registerLazySingleton<ChampionshipStore>(() => ChampionshipStore(
         getIt<ChampionshipState>(),
