@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 
 class CardTip extends StatelessWidget {
   final String img;
+  final String description;
+  final String title;
   
-  const CardTip({super.key, required this.img,});
+  const CardTip({super.key, required this.img, required this.description, required this.title,});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class CardTip extends StatelessWidget {
         ],
       ),
       width: 275,
-      height: 340,
+      height: 410,
       child: Column(
         children: [
           ClipRRect(
@@ -30,10 +32,9 @@ class CardTip extends StatelessWidget {
               topLeft: Radius.circular(20.0),
               topRight: Radius.circular(20.0),
             ),
-            child: Image(
+            child: Image.network(img,
                 height: 141,
                 width: 275,
-                image: AssetImage(img),
                 fit: BoxFit.cover),
           ),
           Column(
@@ -41,16 +42,17 @@ class CardTip extends StatelessWidget {
             children: [
               Container(
                 margin: const EdgeInsets.only(left: 20),
-                height: 140,
-                width: 150,
+                height: 165,
+                width: 240,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Apostas ao Vivo: Estratégias e Dicas para o Sucesso',
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    Text(title,
+                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
                     ),
-                    Text('Explore as melhores práticas ...'),
+                    Text(description,
+                      style: const TextStyle(fontSize: 10),),
                   ],
                 ),
               ),
@@ -61,7 +63,7 @@ class CardTip extends StatelessWidget {
                     onPressed: () {},
                     colorBackground: const Color.fromARGB(255, 255, 255, 255),
                     colorText: Colors.black,
-                    img: 'lib/images/soccer.png',
+                    img: 'assets/images/soccer.png',
                     text: 'Futebol',
                     heightIcon: 16,
                     widhtIcon: 16,
@@ -73,7 +75,7 @@ class CardTip extends StatelessWidget {
                     onPressed: () {},
                     colorBackground: Color.fromARGB(255, 255, 255, 255),
                     colorText: Colors.black,
-                    img: 'lib/images/basket.png',
+                    img: 'assets/images/basket.png',
                     text: 'Basquete',
                     heightIcon: 16,
                     widhtIcon: 16,

@@ -1,9 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:empire/components/card_tip.dart';
+import 'package:empire/locator.dart';
+import 'package:empire/modules/home/home_controller.dart';
 import 'package:flutter/material.dart';
 
 class TipSection extends StatelessWidget {
-  const TipSection({super.key});
+  TipSection({super.key});
+
+  final homeController = getIt<HomeController>();
 
   @override
   Widget build(BuildContext context) {
@@ -29,28 +33,22 @@ class TipSection extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 15,),
+          const SizedBox(
+            height: 15,
+          ),
           CarouselSlider(
-              items: const [
-                CardTip(
-                  img: 'lib/images/image6.png',
-                ),
-                CardTip(
-                  img: 'lib/images/image7.png',
-                ),
-                CardTip(
-                  img: 'lib/images/image9.png',
-                ),
-                CardTip(
-                  img: 'lib/images/image8.png',
-                ),
-              ],
-              options: CarouselOptions(
-                  height: 340,
-                  enlargeCenterPage: false,
-                  enableInfiniteScroll: false,
-                  viewportFraction: 0.8,
-                  padEnds: false))
+            items: homeController.appController.listTips.map((tip) {
+              return CardTip(
+                img: tip.image, description: tip.description, title: tip.title,
+              );
+            }).toList(),
+            options: CarouselOptions(
+                height: 340,
+                enlargeCenterPage: false,
+                enableInfiniteScroll: false,
+                viewportFraction: 0.8,
+                padEnds: false),
+          ),
         ],
       ),
     );

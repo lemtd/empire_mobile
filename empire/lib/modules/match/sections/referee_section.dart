@@ -33,7 +33,7 @@ class RefereeSection extends StatelessWidget {
                 const Image(
                     height: 56,
                     width: 56,
-                    image: AssetImage('lib/images/referee.png'),
+                    image: AssetImage('assets/images/referee.png'),
                     fit: BoxFit.cover),
                 Container(
                     width: 130,
@@ -75,7 +75,7 @@ class RefereeSection extends StatelessWidget {
                       child: const Image(
                           height: 11,
                           width: 14,
-                          image: AssetImage('lib/images/arrow_right.png'),
+                          image: AssetImage('assets/images/arrow_right.png'),
                           fit: BoxFit.cover),
                     ),
                   )

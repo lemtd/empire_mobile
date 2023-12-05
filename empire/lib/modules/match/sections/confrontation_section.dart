@@ -57,7 +57,7 @@ class ConfrontationSection extends StatelessWidget {
                                 Image(
                                     height: 37,
                                     width: 37,
-                                    image: AssetImage('lib/images/sp.png'),
+                                    image: AssetImage('assets/images/sp.png'),
                                     fit: BoxFit.cover),
                               ],
                             )),
@@ -114,7 +114,7 @@ class ConfrontationSection extends StatelessWidget {
                                     height: 37,
                                     width: 37,
                                     image:
-                                        AssetImage('lib/images/palmeiras.png'),
+                                        AssetImage('assets/images/palmeiras.png'),
                                     fit: BoxFit.cover),
                               ],
                             )),

@@ -15,11 +15,14 @@ class CardChampionship extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.0),
       ),
       child: Center(
-        child: Image(
-            height: 44,
-            width: 45,
-            image: AssetImage(img),
-            fit: BoxFit.cover),
+        child: ClipOval(
+          child: Image.network(
+              img,
+              height: 31,
+              width: 31,
+              fit: BoxFit.cover,
+            ),
+        ),
       ),
     );
   }

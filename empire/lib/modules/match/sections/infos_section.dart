@@ -36,7 +36,7 @@ class InfosSection extends StatelessWidget {
                           Image(
                               height: 32,
                               width: 61,
-                              image: AssetImage('lib/images/paramount.png'),
+                              image: AssetImage('assets/images/paramount.png'),
                               fit: BoxFit.cover),
                           Text(
                             'Paramount',
@@ -167,7 +167,7 @@ class InfosSection extends StatelessWidget {
                                 Image(
                                     height: 14,
                                     width: 9,
-                                    image: AssetImage('lib/images/red.png'),
+                                    image: AssetImage('assets/images/red.png'),
                                     fit: BoxFit.cover)
                               ],
                             ),
@@ -189,7 +189,7 @@ class InfosSection extends StatelessWidget {
                                 Image(
                                     height: 14,
                                     width: 9,
-                                    image: AssetImage('lib/images/yellow.png'),
+                                    image: AssetImage('assets/images/yellow.png'),
                                     fit: BoxFit.cover)
                               ],
                             ),

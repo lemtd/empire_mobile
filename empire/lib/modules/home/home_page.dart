@@ -1,5 +1,8 @@
+import 'package:empire/components/loading_modal.dart';
 import 'package:empire/components/tabs_menu.dart';
+import 'package:empire/locator.dart';
 import 'package:empire/modules/home/all_tab.dart';
+import 'package:empire/modules/home/home_controller.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,6 +11,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> drawerKey = GlobalKey();
+    final homeController = getIt<HomeController>();
 
     return DefaultTabController(
       length: 4,
@@ -24,7 +28,7 @@ class HomePage extends StatelessWidget {
               child: Image(
                   height: 25,
                   width: 99.31,
-                  image: AssetImage('lib/images/empire.png'),
+                  image: AssetImage('assets/images/empire.png'),
                   fit: BoxFit.cover),
             ),
             bottom: const TabBar(
@@ -34,19 +38,19 @@ class HomePage extends StatelessWidget {
               tabs: [
                 Tab(
                   child:
-                      TabsMenu(img: 'lib/images/whistle.png', title: 'Todos'),
+                      TabsMenu(img: 'assets/images/whistle.png', title: 'Todos'),
                 ),
                 Tab(
                   child:
-                      TabsMenu(img: 'lib/images/soccer.png', title: 'Futebol'),
+                      TabsMenu(img: 'assets/images/soccer.png', title: 'Futebol'),
                 ),
                 Tab(
                   child:
-                      TabsMenu(img: 'lib/images/basket.png', title: 'Basquete'),
+                      TabsMenu(img: 'assets/images/basket.png', title: 'Basquete'),
                 ),
                 Tab(
                   child: TabsMenu(
-                      img: 'lib/images/controller.png', title: 'E-Sports'),
+                      img: 'assets/images/controller.png', title: 'E-Sports'),
                 ),
               ],
             ),
@@ -137,11 +141,19 @@ class HomePage extends StatelessWidget {
                   leading: const Image(
                       height: 20,
                       width: 20,
-                      image: AssetImage('lib/images/whistle.png'),
+                      image: AssetImage('assets/images/whistle.png'),
                       fit: BoxFit.cover),
                   title: const Text("Esportes"),
-                  onTap: () {
-                    Navigator.pushNamed(context, '/sports');
+                  onTap: () async {
+                    showDialog(
+                      context: context,
+                      barrierDismissible: false,
+                      builder: (BuildContext context) => const LoadingModal(),
+                    );
+                    if (await homeController.appController.setListSports()) {
+                      Navigator.of(context).pop();
+                      Navigator.pushNamed(context, '/sports');
+                    }
                   },
                 ),
                 ListTile(
@@ -156,7 +168,7 @@ class HomePage extends StatelessWidget {
                   leading: const Image(
                       height: 17,
                       width: 17,
-                      image: AssetImage('lib/images/star.png'),
+                      image: AssetImage('assets/images/star.png'),
                       fit: BoxFit.cover),
                   title: const Text("Favoritos"),
                   onTap: () {},
@@ -165,7 +177,7 @@ class HomePage extends StatelessWidget {
                   leading: const Image(
                       height: 15,
                       width: 17,
-                      image: AssetImage('lib/images/user.png'),
+                      image: AssetImage('assets/images/user.png'),
                       fit: BoxFit.cover),
                   title: const Text("Influenciadores"),
                   onTap: () {},
@@ -182,7 +194,7 @@ class HomePage extends StatelessWidget {
                   leading: const Image(
                       height: 13,
                       width: 16,
-                      image: AssetImage('lib/images/ticket.png'),
+                      image: AssetImage('assets/images/ticket.png'),
                       fit: BoxFit.cover),
                   title: const Text("Jogo consciente"),
                   onTap: () {},
@@ -191,7 +203,7 @@ class HomePage extends StatelessWidget {
                   leading: const Image(
                       height: 17,
                       width: 15,
-                      image: AssetImage('lib/images/security.png'),
+                      image: AssetImage('assets/images/security.png'),
                       fit: BoxFit.cover),
                   title: const Text("Privacidade e segurança"),
                   onTap: () {},
@@ -308,7 +320,7 @@ class HomePage extends StatelessWidget {
                       child: const Image(
                           height: 40,
                           width: 40,
-                          image: AssetImage('lib/images/avatar1.png'),
+                          image: AssetImage('assets/images/avatar1.png'),
                           fit: BoxFit.cover),
                     ),
                   ),

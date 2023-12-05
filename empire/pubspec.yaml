@@ -44,6 +44,9 @@ dependencies:
   flutter_mobx: ^2.2.0
   carousel_slider: ^4.2.1
   percent_indicator: ^4.2.3
+  xml: ^6.5.0
+  http: ^1.1.2
+  flutter_spinkit: ^5.2.0
 
 dev_dependencies:
   flutter_test:
@@ -70,60 +73,60 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/images/img_initial.png
-    - lib/images/g.png
-    - lib/images/apple.png
-    - lib/images/arrow_left.png
-    - lib/images/arrow_right.png
-    - lib/images/basket.png
-    - lib/images/boxing.png
-    - lib/images/biceps.png
-    - lib/images/football.png
-    - lib/images/controller.png
-    - lib/images/champions.png
-    - lib/images/image1.png
-    - lib/images/image2.png
-    - lib/images/image3.png
-    - lib/images/image4.png
-    - lib/images/image5.png
-    - lib/images/image6.png
-    - lib/images/image7.png
-    - lib/images/image8.png
-    - lib/images/image9.png
-    - lib/images/empire.png
-    - lib/images/poker.png
-    - lib/images/soccer.png
-    - lib/images/tenis.png
-    - lib/images/volley.png
-    - lib/images/whistle.png
-    - lib/images/nba.png
-    - lib/images/league.png
-    - lib/images/redbull.png
-    - lib/images/europe.png
-    - lib/images/bet.png
-    - lib/images/betsson.png
-    - lib/images/betsafe.png
-    - lib/images/frame1.png
-    - lib/images/frame2.png
-    - lib/images/frame3.png
-    - lib/images/palmeiras.png
-    - lib/images/sp.png
-    - lib/images/bet365.png
-    - lib/images/stake.png
-    - lib/images/star.png
-    - lib/images/security.png
-    - lib/images/ticket.png
-    - lib/images/user.png
-    - lib/images/avatar1.png
-    - lib/images/avatar2.png
-    - lib/images/noto_fire.png
-    - lib/images/arrow.png
-    - lib/images/soccer_pitch.png
-    - lib/images/yellow.png
-    - lib/images/red.png
-    - lib/images/link.png
-    - lib/images/paramount.png
-    - lib/images/referee.png
+    - assets/images/img_initial.png
+    - assets/images/g.png
+    - assets/images/apple.png
+    - assets/images/arrow_left.png
+    - assets/images/arrow_right.png
+    - assets/images/basket.png
+    - assets/images/boxing.png
+    - assets/images/biceps.png
+    - assets/images/football.png
+    - assets/images/controller.png
+    - assets/images/champions.png
+    - assets/images/image1.png
+    - assets/images/image2.png
+    - assets/images/image3.png
+    - assets/images/image4.png
+    - assets/images/image5.png
+    - assets/images/image6.png
+    - assets/images/image7.png
+    - assets/images/image8.png
+    - assets/images/image9.png
+    - assets/images/empire.png
+    - assets/images/poker.png
+    - assets/images/soccer.png
+    - assets/images/tenis.png
+    - assets/images/volley.png
+    - assets/images/whistle.png
+    - assets/images/nba.png
+    - assets/images/league.png
+    - assets/images/redbull.png
+    - assets/images/europe.png
+    - assets/images/bet.png
+    - assets/images/betsson.png
+    - assets/images/betsafe.png
+    - assets/images/frame1.png
+    - assets/images/frame2.png
+    - assets/images/frame3.png
+    - assets/images/palmeiras.png
+    - assets/images/sp.png
+    - assets/images/bet365.png
+    - assets/images/stake.png
+    - assets/images/star.png
+    - assets/images/security.png
+    - assets/images/ticket.png
+    - assets/images/user.png
+    - assets/images/avatar1.png
+    - assets/images/avatar2.png
+    - assets/images/noto_fire.png
+    - assets/images/arrow.png
+    - assets/images/soccer_pitch.png
+    - assets/images/yellow.png
+    - assets/images/red.png
+    - assets/images/link.png
+    - assets/images/paramount.png
+    - assets/images/referee.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

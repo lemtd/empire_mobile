@@ -11,15 +11,15 @@ class AllTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        BannerSection(),
+        const BannerSection(),
         ChampionshipSection(),
-        MatchSection(),
+        const MatchSection(),
         TipSection(),
         BonusSection(),
-        LastBetSection(),
-        Padding(
+        const LastBetSection(),
+        const Padding(
           padding: EdgeInsets.only(top: 25),
           child: SizedBox(
             height: 125,
@@ -28,7 +28,7 @@ class AllTab extends StatelessWidget {
               child: Image(
                 height: 36,
                 width: 143,
-                image: AssetImage('lib/images/empire.png'),
+                image: AssetImage('assets/images/empire.png'),
               ),
             ),
           ),

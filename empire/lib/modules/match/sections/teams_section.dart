@@ -1,4 +1,6 @@
 import 'package:empire/components/card_match.dart';
+import 'package:empire/locator.dart';
+import 'package:empire/modules/home/home_controller.dart';
 import 'package:flutter/material.dart';
 
 class TeamsSection extends StatelessWidget {
@@ -6,6 +8,8 @@ class TeamsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final homeController = getIt<HomeController>();
+
     return Container(
       height: 800,
       decoration: const BoxDecoration(
@@ -37,7 +41,7 @@ class TeamsSection extends StatelessWidget {
                   child: const Image(
                       height: 14,
                       width: 8,
-                      image: AssetImage('lib/images/arrow.png'),
+                      image: AssetImage('assets/images/arrow.png'),
                       fit: BoxFit.cover),
                 ),
                 const Text(
@@ -50,16 +54,14 @@ class TeamsSection extends StatelessWidget {
               ],
             ),
           ),
-          const CardMatch(
-            isMatchPage: true,
-          ),
+          CardMatch(isMatchPage: false, img_a: homeController.appController.listMatch[0].teamAImage, img_b: homeController.appController.listMatch[0].teamBImage, team_a: homeController.appController.listMatch[0].teamA, team_b: homeController.appController.listMatch[0].teamB, bet: homeController.appController.listMatch[0].odds1xbet.toString(), betsafe: homeController.appController.listMatch[0].oddsBetsafe.toString(), betsson: homeController.appController.listMatch[0].oddsBetsson.toString(), id: 0,),
           Stack(
             alignment: Alignment.center,
             children: [
               const Image(
                   height: 262,
                   width: 379,
-                  image: AssetImage('lib/images/soccer_pitch.png'),
+                  image: AssetImage('assets/images/soccer_pitch.png'),
                   fit: BoxFit.cover),
               Positioned(
                 top: 65,
@@ -79,7 +81,7 @@ class TeamsSection extends StatelessWidget {
                     child: Image(
                         height: 32,
                         width: 32,
-                        image: AssetImage('lib/images/sp.png'),
+                        image: AssetImage('assets/images/sp.png'),
                         fit: BoxFit.cover),
                   ),
                 ),
@@ -102,7 +104,7 @@ class TeamsSection extends StatelessWidget {
                     child: Image(
                         height: 32,
                         width: 32,
-                        image: AssetImage('lib/images/palmeiras.png'),
+                        image: AssetImage('assets/images/palmeiras.png'),
                         fit: BoxFit.cover),
                   ),
                 ),
