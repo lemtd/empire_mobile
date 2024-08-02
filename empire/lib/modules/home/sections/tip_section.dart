@@ -14,6 +14,7 @@ class TipSection extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: 30, bottom: 15),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
             margin: const EdgeInsets.only(left: 45, right: 35),
@@ -43,7 +44,7 @@ class TipSection extends StatelessWidget {
               );
             }).toList(),
             options: CarouselOptions(
-                height: 340,
+                height: 400,
                 enlargeCenterPage: false,
                 enableInfiniteScroll: false,
                 viewportFraction: 0.8,
