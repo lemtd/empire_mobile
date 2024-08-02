@@ -28,9 +28,9 @@ class MatchModel {
     teamA = json['team_a'];
     teamB = json['team_b'];
     teamAScore = json['team_a_score'];
-    odds1xbet = json['1xbet_odds_avg'];
-    oddsBetsafe = json['betsafe_odds_avg'];
-    oddsBetsson = json['betsson_odds_avg'];
+    odds1xbet = json['1xbet_odds_avg'].toDouble();
+    oddsBetsafe = json['betsafe_odds_avg'].toDouble();
+    oddsBetsson = json['betsson_odds_avg'].toDouble();
     likesCount = json['likes_count'];
     starsCount = json['stars_count'];
     viewsCount = json['views_count'];
@@ -42,8 +42,8 @@ class MatchModel {
     refereeStats = json['referee_stats'];
     teamAImage = json['team_a_image'];
     teamBImage = json['team_b_image'];
-    redCardMedia = json['red_card_media'];
-    yellowCardMedia = json['yellow_card_media'];
+    redCardMedia = json['red_card_media'].toDouble();
+    yellowCardMedia = json['yellow_card_media'].toDouble();
     teamAStats = json['team_a_stats'];
     teamBStats = json['team_b_stats'];
     id = json['id'];
