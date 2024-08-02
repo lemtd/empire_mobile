@@ -29,6 +29,6 @@ If you want to access the APK more quickly, you can find the app's APK at:
 
 > /lib
 
-> |-- /apk
+> /apk
 
-> |-- |-- app-release.apk
+> |-- app-release.apk
